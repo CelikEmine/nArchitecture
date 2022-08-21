@@ -31,14 +31,14 @@ namespace Persistence.Contexts
         {
             modelBuilder.Entity<Brand>(a =>
             {
-                a.ToTable("SomeFeatureEntities").HasKey(k => k.Id);
+                a.ToTable("Brands").HasKey(k => k.Id);
                 a.Property(p => p.Id).HasColumnName("Id");
                 a.Property(p => p.Name).HasColumnName("Name");
             });
 
 
 
-            Brand[] brandsSeedData = { new(1, "Test 1"), new(2, "Test 2") };
+            Brand[] brandsSeedData = { new(1, "BMW"), new(2, "Mercedes") };
             modelBuilder.Entity<Brand>().HasData(brandsSeedData);
 
            
